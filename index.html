@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	  <meta charset="UTF-8">
+    <title>New York City 311</title>
+
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/dc.css"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+
+    <style>
+        #monthly-volume-chart g.y {
+            display: none;
+        }
+    </style>
+	<script language="javascript" type="text/javascript">
+	function showHide(shID) {
+	   if (document.getElementById(shID)) {
+	      if (document.getElementById(shID+'-show').style.display != 'none') {
+	         document.getElementById(shID+'-show').style.display = 'none';
+	         document.getElementById(shID).style.display = 'block';
+	      }
+	      else {
+	         document.getElementById(shID+'-show').style.display = 'inline';
+	         document.getElementById(shID).style.display = 'none';
+	      }
+	   }
+	}
+	</script>
+</head>
+
+<body>
+	<div id = "loader">
+		<div id = "loader-text">		
+		Please wait while records load for New York City ... 
+	    </div>
+	</div>
+
+
+<div id="container">
+	<div class="row">
+        <div class="dc-data-count">
+            <span class="filter-count"></span> selected out of <span class="total-count"></span> records | <a
+                href="javascript:dc.filterAll(); dc.renderAll();">Reset All</a>
+        </div>
+        </div>
+		
+<div class="row">
+	<div class = "chartGroupTitle">Weekday, Time</div>
+    <div id="day-of-week-chart">
+        Day of Week
+        <a class="reset" href="javascript:dayOfWeekChart.filterAll();dc.redrawAll();" 			style="display: none;">reset</a>
+        <div class="clearfix"></div>
+    </div>
+	
+    <div id="hour-chart">
+        Time of Day
+        <span class="reset" style="display: none;"><span class="filter"></span> hour</span>
+        <a class="reset" href="javascript:hourChart.filterAll();dc.redrawAll();" 		style="display: none;">reset</a>
+        <div class="clearfix"></div>
+    </div>
+  <!--
+    <div id="duration-chart">
+          Open to Close Duration - If complaint is still open, duration is calculated based on current time
+          <span class="reset" style="display: none;"><span class="filter"></span> hours</span>
+          <a class="reset" href="javascript:durationChart.filterAll();dc.redrawAll();"         style="display: none;">reset</a>
+          <div class="clearfix"></div>
+      </div>
+     
+  </div>
+  -->
+  
+<div class = "row">
+
+</div>	
+	
+<div class="row">	
+	<div class = "chartGroupTitle">Zipcodes and Jurisdictions</div>
+	    <div id="nyc-chart">
+	        New York City Zipcode Map
+	        <span class="reset" style="display: none;">: <span class="filter"></span></span>
+	        <a class="reset" href="javascript:nycMap.filterAll();dc.redrawAll();" style="display: none;">reset</a>
+	        <div class="clearfix"></div>
+	    </div>
+		
+	    <div id="borough-chart">
+	       Boroughs
+	        <span class="reset" style="display: none;">: <span class="filter"></span></span>
+	        <a class="reset" href="javascript:boroughChart.filterAll();dc.redrawAll();" 		style="display: none;">reset</a>
+	        <div class="clearfix"></div>
+		</div>
+	    <div id="zipcode-chart">
+	      Top 10 Zipcodes
+	        <span class="reset" style="display: none;">: <span class="filter"></span></span>
+	        <a class="reset" href="javascript:zipcodeChart.filterAll();dc.redrawAll();" 		style="display: none;">reset</a>
+	        <div class="clearfix"></div>
+		</div>
+</div>
+
+<div class="row">
+	<div class = "chartGroupTitle">Agencies and Complaints</div>
+
+    <div id="agency-chart">
+        Top 10 Agencies
+        <span class="reset" style="display: none;">: <span class="filter"></span></span>
+        <a class="reset" href="javascript:agencyChart.filterAll();dc.redrawAll();" 		style="display: none;">reset</a>
+        <div class="clearfix"></div>
+	</div>	  
+    <div id="complaint-chart">
+        Top 10 Complaints
+        <span class="reset" style="display: none;">: <span class="filter"></span></span>
+        <a class="reset" href="javascript:complaintChart.filterAll();dc.redrawAll();"		style="display: none;">reset</a>
+        <div class="clearfix"></div>
+	</div> 
+</div>
+
+
+<!--<div class="row">
+    
+    <table class="table table-hover dc-data-table">
+        <thead>
+        <tr class="header">
+            <th>Date</th>
+            <th>Agency</th>
+            <th>Zipcode</th>
+            <th>Borough</th>
+            <th>Complaint</th>
+        </tr>
+        </thead>
+    </table>
+</div>-->
+</div>
+
+<script type="text/javascript" src="js/d3.js"></script>
+<script type="text/javascript" src="js/crossfilter.js"></script>
+<script type="text/javascript" src="js/dc.js"></script>
+<script type="text/javascript" src="js/colorbrewer.js"></script>
+<script type="text/javascript" src="js/queue.v1.min.js"></script>
+
+<script type="text/javascript" src="index.js"></script>
+
+
+</body>
+</html>
